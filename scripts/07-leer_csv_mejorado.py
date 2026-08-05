@@ -12,22 +12,22 @@ with open('data/raw/jugadores.csv', newline='', encoding='utf-8-sig') as archivo
         }
         jugadores.append(fila_limpia)
 
-#Imprime lacantidad de jugadores cargados del Equipo
+#Imprime la cantidad de jugadores cargados del equipo
 print(f"Se cargaron un total de {len(jugadores)} jugadores")
 
-#Imprime la cantidad Total de Puntos convertidos en el partido
+#Imprime la cantidad total de Puntos convertidos en el partido
 total = 0
 
 for jugador in jugadores:
     total += int(jugador["Puntos"])
 
-print(f"La cantidad Total de Puntos del Equipo es: {total}")
+print(f"La cantidad total de puntos del equipo es: {total}")
 
-#Imprime el promedio de Puntos entre Todos los jugadores del Equipo con 2 decimales de precision
+#Imprime el promedio de puntos entre todos los jugadores del equipo con 2 decimales de precision
 promedio = total / len(jugadores)
 print(f"Promedio: {promedio:.2f}")
 
-#Imprime el maximo anotador del Equipo
+#Calcula el maximo anotador del equipo
 max_puntos = 0
 max_anotadores = []
 
@@ -37,7 +37,7 @@ for jugador in jugadores:
         max_puntos = puntos
         max_anotadores = [jugador["Jugador"]]
     elif puntos == max_puntos:
-        max_anotadores.append(jugador["Jugador1"])
+        max_anotadores.append(jugador["Jugador"])
             
 print(
     f"Maximo anotador/es: {', '.join(max_anotadores)}"
